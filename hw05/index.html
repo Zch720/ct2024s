@@ -178,14 +178,8 @@
   <!-- ------------------------------------------------>
   <div class="row hw12">
     <div class="col-md-12 twenty">
-      該次作業程式碼，請放在 https://github.com/<span style="color:red;">你的帳號</span>/ct2024s/hw<span style="color:red;">05</span>/src/ 檔案夾。
-    </div>
-  </div>
-
-  <!-- ------------------------------------------------>
-  <div class="row hw12">
-    <div class="col-md-12 twenty">
-      心得報告 105 字。心得報告 105 字。心得報告 105 字。心得報告 105 字。心得報告 105 字。心得報告 105 字。心得報告 105 字。心得報告 105 字。心得報告 105 字。心得報告 105 字。心得報告 105 字。心得報告 105 字。心得報告 105 字。心得報告 105 字。心得報告 105 字。
+      <h3>心得</h3>
+      這次訓練沒寫過的字，本來想用自己的電腦，試了很久之後才發現規格不合，後來用教室的電腦來訓練。但結果看起來不太成功，可能我的字不好訓練，或要更久。
     </div>
   </div>
 
@@ -201,19 +195,24 @@
         </tr>
         <tr>
           <td rowspan="7" id="myTotal"></td>
-          <td><input type="checkbox" class="flipswitch" id="myCheckbox1"></td>
+          <td><input type="checkbox" class="flipswitch" id="myCheckbox1" checked></td>
           <td id='m1'>2</td>
-          <td>Simple baseline - 描述、描述、描述</td>
+          <td>Simple baseline - 產生訓練樣本 (4808字/2) (放入image_train，壓縮檔上傳)</td>
         </tr>
         <tr>
           <td><input type="checkbox" class="flipswitch" id="myCheckbox2" checked></td>
-          <td id='m2'>6</td>
-          <td>Medium baseline - 描述、描述、描述 </td>
+          <td id='m2'>2</td>
+          <td>Simple baseline - 產生驗證樣本 (4808字/2) (放入image_val，壓縮檔上傳)</td>
         </tr>
         <tr>
-          <td><input type="checkbox" class="flipswitch" id="myCheckbox3"></td>
-          <td id='m3'>2</td>
-          <td>Strong baseline - 描述、描述、描述 </td>
+          <td><input type="checkbox" class="flipswitch" id="myCheckbox3" checked></td>
+          <td id='m3'>4</td>
+          <td>Medium baseline - 繳交字體的對比檔案 (以 experiment_學號_姓名.zip 命名) </td>
+        </tr>
+        <tr>
+          <td><input type="checkbox" class="flipswitch" id="myCheckbox4" checked></td>
+          <td id='m4'>2</td>
+          <td>Strong baseline - 最後生成結果 (於infer_1資料夾內)</td>
         </tr>
       </table>
     </div>
@@ -221,14 +220,42 @@
 
   <!-- ------------------------------------------------>
   <div class="row hw12">
-    <div class="col-md-12 twenty">
-      <video id="video1" style="width:100%;max-width:100%;" controls="">
-        <source src="https://www.w3schools.com/html/mov_bbb.mp4" type="video/mp4">
-      </video>
+    <div class="col-md-12 twenty">    
+      <h1>Simple Baseline</h1>
+    </div>
+  </div>
+
+  <div class="row hw12">
+    <div class="col-md-12 twenty">    
+      <img src="./src/image_train.png" width="1200px" height="600px"/>  
+    </div>
+  </div>
+  
+   <div class="row hw12">
+    <div class="col-md-12 twenty">          
+      <img src="./src/image_val.png" width="1200px" height="600px"/>
+      
     </div>
   </div>
 
   <!-- ------------------------------------------------>
+
+  <div class="row hw12">
+    <div class="col-md-12 twenty">    
+      <h1>Medium Baseline</h1>
+      <a href="https://drive.google.com/file/d/1zJfNtNlvVoV0-dD3COS5q5cKvX7BV62D/view?usp=sharing`" download="experiment_110820054">Download experiment_110820054_鍾承澔</a>
+      
+    </div>
+  </div>
+
+  <!-- ------------------------------------------------>
+  <div class="row hw12">
+    <div class="col-md-12 twenty">    
+      <h1>Strong Baseline</h1>
+      <a href="https://github.com/zch720/ct2024s/tree/main/hw05/Strong" download="infer_110820054">Download infer_110820054_鍾承澔</a>
+      
+    </div>
+  </div>
 
   <!-- ------------------------------------------------>
 
@@ -265,6 +292,10 @@
 
     if (d3.select("#myCheckbox3").property("checked")){
       score += parseInt(d3.select('#m3').html());   
+    }
+
+    if (d3.select("#myCheckbox4").property("checked")){
+      score += parseInt(d3.select('#m4').html());   
     }
 
     d3.select("#myTotal").html(score);    
